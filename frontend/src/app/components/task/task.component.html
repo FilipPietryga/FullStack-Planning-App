@@ -1,0 +1,38 @@
+<main>
+  <div class="jumbotron jumbotron-fluid">
+    <ul *ngFor="let task of tasks">
+      <div class="container">
+        <h1 class="display-4">task.title</h1>
+        <p class="display-6">task.description</p>
+        <button type="button" class="btn btn-danger" (click)="del(task.id)">Done!</button>
+      </div>
+    </ul>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Add a new task!</h1>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Form">+</button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Insert the data of the task</span>
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="modified.title">
+            <input type="text" class="form-control" [(ngModel)]="modified.description">
+          </div><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+          <button type="button" class="btn btn-primary" (click)="add()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskComponent } from './components/task/task.component';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     RouterOutlet,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TaskComponent
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.sass'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'frontend';
